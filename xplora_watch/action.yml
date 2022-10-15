@@ -7,4 +7,3 @@ runs:
       shell: python
       run: |
         "${{ github.action_path }}/entrypoint.py"
-      id: step1
