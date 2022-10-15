@@ -8,8 +8,3 @@ runs:
       run: |
         "${{ github.action_path }}/entrypoint.py"
       id: step1
-    - name:  "Xplora Step 2"
-      shell: bash
-      run: |
-        echo "${{ steps.step1.outputs.repo }}"
-        echo "${{ steps.step1.outputs.www }}"
