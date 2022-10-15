@@ -10,6 +10,10 @@ token = os.getenv("GITHUB_TOKEN", None)
 
 g = Github(token)
 
+print(g.rate_limiting_resettime)
+print(g.get_rate_limit())
+
+exit()
 try:
     repo = g.get_repo(APP_REPO)
     for issue in repo.get_issues(state="closed"):
