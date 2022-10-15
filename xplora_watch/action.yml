@@ -13,5 +13,4 @@ runs:
     - name: "Xplora"
       shell: python
       run: |
-          python3 -m pip install --upgrade pip
-          pytohn3 "${{ github.action_path }}"/entrypoint.py
+        "${{ github.action_path }}"/entrypoint.py
