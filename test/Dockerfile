@@ -4,7 +4,7 @@ WORKDIR /app
 
 # We are installing a dependency here directly into our app source dir
 RUN python -m pip install --upgrade pip
-RUN pip install --target=/app requests pygithub
+RUN pip install --target=/app requests pygithub cffi
 
 # A distroless container image with Python and some basics like SSL certificates
 # https://github.com/GoogleContainerTools/distroless
