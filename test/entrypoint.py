@@ -15,7 +15,7 @@ print(g.get_rate_limit())
 print(APP_REPO)
 print(f"::set-output name=repo::{limit}")
 print(f"::set-output name=www::rrrr")
-exit()
+exit(0)
 try:
     repo = g.get_repo(APP_REPO)
     for issue in repo.get_issues(state="closed"):
