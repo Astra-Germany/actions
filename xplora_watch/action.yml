@@ -9,5 +9,5 @@ runs:
         "${{ github.action_path }}/entrypoint.py"
       id: step1
     - name:  "Xplora Step 2"
-      shell: python
-      run: print( "${{ steps.step1.outputs.repo }}" )
+      shell: bash
+      run: "${{ steps.step1.outputs.repo }}"
