@@ -10,4 +10,6 @@ runs:
       id: step1
     - name:  "Xplora Step 2"
       shell: bash
-      run: "${{ steps.step1.outputs.repo }}"
+      run: |
+        echo "${{ steps.step1.outputs.repo }}"
+        echo "${{ steps.step1.outputs.www }}"
