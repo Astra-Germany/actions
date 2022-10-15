@@ -1,0 +1,7 @@
+name: 'Astra-Germany: Xplora® Watch'
+description: 'Astra-Germany: Xplora® Watch'
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        python ${{ github.action_path }}/xplora_watch/entrypoint.py
