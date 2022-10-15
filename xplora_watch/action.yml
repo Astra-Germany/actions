@@ -13,4 +13,4 @@ runs:
     - name: "Xplora"
       shell: python
       run: |
-        "${{ github.action_path }}"/entrypoint.py
+        "${{ github.action_path }}/entrypoint.py"
