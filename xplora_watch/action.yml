@@ -10,4 +10,4 @@ runs:
       id: step1
     - name:  "Xplora Step 2"
       shell: python
-      run: print( "${{ steps.get_square.outputs.repo }}" )
+      run: print( "${{ steps.step1.outputs.repo }}" )
