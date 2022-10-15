@@ -5,5 +5,4 @@ runs:
   steps:
     - name: "Xplora"
       shell: python
-      run: |
-        python ${{ github.action_path }}/entrypoint.py
+      run: ${{ github.action_path }}/entrypoint.py
