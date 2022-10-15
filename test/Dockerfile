@@ -14,5 +14,5 @@ pip install --target=/app requests PyGithub cffi pynacl
 FROM gcr.io/distroless/python3-debian11
 COPY --from=builder /app /app
 WORKDIR /app
-ENV PYTHONPATH /app
+# ENV PYTHONPATH /app
 CMD ["/app/entrypoint.py"]
