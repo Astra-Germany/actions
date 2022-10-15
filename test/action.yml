@@ -10,20 +10,22 @@ outputs:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
-  using: "composite"
-  steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::setOutput name=random-number::$(echo $RANDOM)"
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - name: "TEST"
-      shell: python
-      run: |
-        "${{ github.action_path }}/entrypoint.py"
-    - run: |
-        echo "${{ steps.step1.outputs.repo }}"
-        echo "${{ steps.step1.outputs.www }}"
-      shell: bash
+  using: "docker"
+  image: "Dockerfile"
+  # using: "composite"
+  # steps:
+  #   - run: echo Hello ${{ inputs.who-to-greet }}.
+  #     shell: bash
+  #   - id: random-number-generator
+  #     run: echo "::setOutput name=random-number::$(echo $RANDOM)"
+  #     shell: bash
+  #   - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+  #     shell: bash
+  #   - name: "TEST"
+  #     shell: python
+  #     run: |
+  #       "${{ github.action_path }}/entrypoint.py"
+  #   - run: |
+  #       echo "${{ steps.step1.outputs.repo }}"
+  #       echo "${{ steps.step1.outputs.www }}"
+  #     shell: bash
