@@ -12,7 +12,7 @@ g = Github(token)
 
 print(g.rate_limiting_resettime)
 print(g.get_rate_limit())
-
+print(APP_REPO)
 exit()
 try:
     repo = g.get_repo(APP_REPO)
