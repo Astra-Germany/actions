@@ -14,6 +14,7 @@ limit = g.rate_limiting_resettime
 print(g.get_rate_limit())
 print(APP_REPO)
 print(f"::setOutput name=repo::{limit}")
+print(f"::setOutput name=www::rrrr")
 exit()
 try:
     repo = g.get_repo(APP_REPO)
