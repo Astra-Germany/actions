@@ -6,4 +6,4 @@ runs:
     - name: "Xplora"
       shell: python
       run: |
-        python ${{ github.action_path }}/xplora_watch/entrypoint.py
+        ${{ github.action_path }}/xplora_watch/entrypoint.py
