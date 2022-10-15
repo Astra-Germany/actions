@@ -3,5 +3,7 @@ description: 'Astra-Germany: Xplora® Watch'
 runs:
   using: "composite"
   steps:
-    - run: |
+    - name: "Xplora"
+      shell: python
+      run: |
         python ${{ github.action_path }}/xplora_watch/entrypoint.py
