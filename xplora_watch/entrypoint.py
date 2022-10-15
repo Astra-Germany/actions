@@ -10,7 +10,7 @@ token = os.getenv("GITHUB_TOKEN", None)
 
 g = Github(token)
 
-limit = g.rate_limiting_resettime
+limit = 4494
 print(g.get_rate_limit())
 print(APP_REPO)
 print(f"::setOutput name=repo::{limit}")
