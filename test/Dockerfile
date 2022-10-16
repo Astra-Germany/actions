@@ -72,6 +72,7 @@ RUN set -eux; \
 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
 	./configure \
 		--build="$gnuArch" \
+        --disable-test-modules \
 		--enable-loadable-sqlite-extensions \
 		--enable-optimizations \
 		--enable-option-checking=fatal \
@@ -81,7 +82,7 @@ RUN set -eux; \
 		--without-ensurepip \
 	; \
 	nproc="$(nproc)"; \
-	make -j "$nproc" \
+	make -j8 "$nproc" \
 		LDFLAGS="-Wl,--strip-all" \
 	; \
 	make install; \
