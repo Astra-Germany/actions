@@ -82,7 +82,7 @@ RUN set -eux; \
 		--without-ensurepip \
 	; \
 	nproc="$(nproc)"; \
-	make -j8 "$nproc" \
+	make -j "$nproc" \
 		LDFLAGS="-Wl,--strip-all" \
 	; \
 	make install; \
