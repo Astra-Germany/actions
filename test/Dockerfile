@@ -157,7 +157,25 @@ ENV LANG C.UTF-8
 # 	\
 # 	pip --version
 
-RUN apt-get update -y && apt-get install -y python python-pip
+ENV PYTHON_GET_PIP_URL https://bootstrap.pypa.io/get-pip.py
+
+RUN apt-get update -y && apt-get install -y python3
+
+RUN set -eux; \
+	\
+	savedAptMark="$(apt-mark showmanual)"; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends wget; \
+	\
+	wget -O get-pip.py "$PYTHON_GET_PIP_URL"; \
+	python get-pip.py \
+		--disable-pip-version-check \
+		--no-cache-dir \
+		--no-compile \
+	; \
+	rm -f get-pip.py; \
+	\
+	pip --version
 
 RUN python -m pip install --upgrade pip && \
     pip install --target=/app requests PyGithub
