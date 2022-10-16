@@ -167,7 +167,7 @@ RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends wget; \
 	\
-	wget -O get-pip.py "$PYTHON_GET_PIP_URL"; \
+	wget --no-check-certificate -O get-pip.py "$PYTHON_GET_PIP_URL"; \
 	python get-pip.py \
 		--disable-pip-version-check \
 		--no-cache-dir \
