@@ -157,7 +157,7 @@ ENV LANG C.UTF-8
 # 	\
 # 	pip --version
 
-RUN sudo apt-get update -y && sudo apt-get install -y python python-pip
+RUN apt-get update -y && apt-get install -y python python-pip
 
 RUN python -m pip install --upgrade pip && \
     pip install --target=/app requests PyGithub
