@@ -160,4 +160,4 @@ RUN python -m pip install --upgrade pip && \
 
 WORKDIR /app
 # ENV PYTHONPATH /app
-CMD ["/app/entrypoint.py"]
+CMD ["python", "/app/entrypoint.py"]
