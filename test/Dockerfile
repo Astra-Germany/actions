@@ -21,6 +21,13 @@ ENV LANG C.UTF-8
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
+		apt-utils \
+	; \
+	rm -rf /var/lib/apt/lists/*
+
+RUN set -eux; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
 		ca-certificates \
 		netbase \
 		tzdata \
