@@ -23,6 +23,7 @@ RUN set -eux; \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections; \
 	apt-get install -y --no-install-recommends \
 		apt-utils \
+		linux-headers-$(uname -r) \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
