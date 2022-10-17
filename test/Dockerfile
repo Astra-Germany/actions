@@ -24,6 +24,7 @@ RUN set -eux; \
 		ca-certificates \
 		netbase \
 		tzdata \
+		apt-utils \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
