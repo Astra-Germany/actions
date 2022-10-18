@@ -22,7 +22,7 @@ ENV LANG C.UTF-8
 # runtime dependencies
 RUN set -eux; \
 	apt-get update; \
-	apt-get upgrade; \
+	apt-get upgrade -y; \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections; \
 	apt-get install -y --no-install-recommends \
 		apt-utils \
