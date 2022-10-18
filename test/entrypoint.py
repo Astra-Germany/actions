@@ -18,6 +18,7 @@ def main():
     print(APP_REPO)
     print(f"::setOutput name=repo::{limit}")
     print(f"::setOutput name=www::rrrr")
+    repo = g.get_repo(APP_REPO)
     print(repo.events_url)
     sys.exit(0)
     try:
