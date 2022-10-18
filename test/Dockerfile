@@ -11,6 +11,8 @@ USER root
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 ADD . /app
 
 # http://bugs.python.org/issue19846
@@ -22,7 +24,7 @@ RUN set -eux; \
 	apt-get update; \
 	apt-get upgrade; \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections; \
-	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+	apt-get install -y --no-install-recommends \
 		apt-utils \
 	; \
 	rm -rf /var/lib/apt/lists/*
