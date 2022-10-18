@@ -18,6 +18,8 @@ def main():
     print(APP_REPO)
     print(f"::setOutput name=repo::{limit}")
     print(f"::setOutput name=www::rrrr")
+    print(g.get_events())
+    print(g.get_events().get_page(0))
     sys.exit(0)
     try:
         repo = g.get_repo(APP_REPO)
