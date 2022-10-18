@@ -22,7 +22,7 @@ RUN set -eux; \
 	apt-get update; \
 	apt-get upgrade; \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections; \
-	apt-get install -y --no-install-recommends \
+	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 		apt-utils \
 	; \
 	rm -rf /var/lib/apt/lists/*
