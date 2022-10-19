@@ -25,7 +25,8 @@ def main():
     # GITHUB_OUTPUT = setout
     # repo = g.get_repo(APP_REPO)
     # print(repo.events_url)
-    print(setout)
+    f = open(setout, "r")
+    print(f.read())
     print(type(setout))
     sys.exit(0)
     try:
