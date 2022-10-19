@@ -11,7 +11,7 @@ def main():
         APP_REPO = "Ludy87/xplora_watch"
     token = os.getenv("GITHUB_TOKEN", None)
 
-    setout = os.getenv("GITHUB_OUTPUT", {})
+    setout: dict[str, any] = os.getenv("GITHUB_OUTPUT", {})
 
     g = Github(token)
 
