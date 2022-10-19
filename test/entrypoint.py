@@ -9,9 +9,8 @@ def main():
     APP_REPO = os.getenv("GITHUB_REPOSITORY", None)
     if APP_REPO is None:
         APP_REPO = "Ludy87/xplora_watch"
+    GITHUB_ACTION = os.getenv("GITHUB_ACTION", None)
     token = os.getenv("GITHUB_TOKEN", None)
-
-    setout = os.getenv("GITHUB_OUTPUT", {})
 
     g = Github(token)
 
@@ -25,9 +24,8 @@ def main():
     # GITHUB_OUTPUT = setout
     # repo = g.get_repo(APP_REPO)
     # print(repo.events_url)
-    f = open(setout, "r")
-    print(f.read())
-    print(type(setout))
+    
+    print(GITHUB_ACTION)
     sys.exit(0)
     try:
         repo = g.get_repo(APP_REPO)
