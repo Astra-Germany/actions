@@ -11,7 +11,7 @@ def main():
         APP_REPO = "Ludy87/xplora_watch"
     token = os.getenv("GITHUB_TOKEN", None)
 
-    setout: dict[str, any] = os.getenv("GITHUB_OUTPUT", {})
+    setout = os.getenv("GITHUB_OUTPUT", {})
 
     g = Github(token)
 
@@ -20,12 +20,13 @@ def main():
     print(APP_REPO)
     # print(f"::setOutput name=repo::{limit}")
     # print(f"::setOutput name=www::rrrr")
-    setout["repo"] = limit
-    setout["www"] = "rrrr"
-    GITHUB_OUTPUT = setout
+    # setout["repo"] = limit
+    # setout["www"] = "rrrr"
+    # GITHUB_OUTPUT = setout
     repo = g.get_repo(APP_REPO)
     print(repo.events_url)
-    print(GITHUB_OUTPUT)
+    print(setout)
+    print(type(setout))
     sys.exit(0)
     try:
         repo = g.get_repo(APP_REPO)
