@@ -18,9 +18,12 @@ def main():
     limit = g.rate_limiting_resettime
     print(g.get_rate_limit())
     print(APP_REPO)
-    
+    pull_request: dict = {}
     with open(GITHUB_EVENT_PATH, "r") as f:
-        result = json.loads(f.read())
+        result: dict = json.loads(f.read())
+        pull_request: dict = result.get("pull_request", None)
+        if pull_request:
+            print(pull_request.get("number", None))
         print(result)
     sys.exit(0)
     try:
