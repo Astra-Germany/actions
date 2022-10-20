@@ -1,3 +1,4 @@
+import json
 import os
 import sys
 
@@ -9,7 +10,7 @@ def main():
     APP_REPO = os.getenv("GITHUB_REPOSITORY", None)
     if APP_REPO is None:
         APP_REPO = "Ludy87/xplora_watch"
-    GITHUB_PATH = os.getenv("GITHUB_PATH", None)
+    GITHUB_EVENT_PATH = os.getenv("GITHUB_EVENT_PATH", None)
     token = os.getenv("GITHUB_TOKEN", None)
 
     g = Github(token)
@@ -18,7 +19,9 @@ def main():
     print(g.get_rate_limit())
     print(APP_REPO)
     
-    print(GITHUB_PATH)
+    with open(GITHUB_EVENT_PATH, "r") as f:
+        result = json.loads(f.read())
+        print(result)
     sys.exit(0)
     try:
         repo = g.get_repo(APP_REPO)
