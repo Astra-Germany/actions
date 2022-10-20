@@ -9,7 +9,7 @@ def main():
     APP_REPO = os.getenv("GITHUB_REPOSITORY", None)
     if APP_REPO is None:
         APP_REPO = "Ludy87/xplora_watch"
-    GITHUB_ACTION = os.getenv("GITHUB_ACTION", None)
+    GITHUB_PATH = os.getenv("GITHUB_PATH", None)
     token = os.getenv("GITHUB_TOKEN", None)
 
     g = Github(token)
@@ -25,7 +25,7 @@ def main():
     # repo = g.get_repo(APP_REPO)
     # print(repo.events_url)
     
-    print(GITHUB_ACTION)
+    print(GITHUB_PATH)
     sys.exit(0)
     try:
         repo = g.get_repo(APP_REPO)
