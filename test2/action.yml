@@ -10,7 +10,6 @@ outputs:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
-  runs-on: "ubuntu-latest"
   # using: "docker"
   # image: "Dockerfile"
   using: "composite"
@@ -24,7 +23,6 @@ runs:
     - name: "TEST"
       shell: python
       run: |
-        apt install -y curl
         curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         python get-pip.py
         python -m pip install --upgrade pip
