@@ -10,6 +10,7 @@ outputs:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
+  runs-on: "ubuntu-latest"
   # using: "docker"
   # image: "Dockerfile"
   using: "composite"
